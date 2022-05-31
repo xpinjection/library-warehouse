@@ -1,0 +1,20 @@
+feign:
+  library:
+    url: localhost:8080
+  client:
+    config:
+      library:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+spring:
+  application:
+    name: library-warehouse
+  jackson:
+    serialization:
+      indent_output: true
+    deserialization:
+      fail-on-unknown-properties: true
+  jmx:
+    enabled: false
