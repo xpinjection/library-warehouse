@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/books?author=Unknown"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

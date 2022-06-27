@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/books?author=Josh%20Bloch"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "id": 9,
+        "name": "Effective Java",
+        "author": "Josh Bloch"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
