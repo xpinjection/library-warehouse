@@ -98,6 +98,10 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Rules.java</include>
+                    </includes>
                     <forkCount>0</forkCount>
                     <systemPropertyVariables>
                         <pact_do_not_track>true</pact_do_not_track>
