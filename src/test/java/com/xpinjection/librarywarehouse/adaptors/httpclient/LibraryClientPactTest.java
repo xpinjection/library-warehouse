@@ -35,10 +35,10 @@ class LibraryClientPactTest {
                     .query("author=" + AUTHOR)
                 .willRespondWith()
                     .status(200)
-                    .body(newJsonArrayMinLike(1, a -> a.object(o -> {
-                        o.id("id", 9L);
-                        o.stringMatcher("name", "\\w.*", BOOK_NAME);
-                        o.stringMatcher("author", "\\w.*", AUTHOR);
+                    .body(newJsonArrayMinLike(1, array -> array.object(book -> {
+                        book.id("id", 9L);
+                        book.stringMatcher("name", "\\w.*", BOOK_NAME);
+                        book.stringMatcher("author", AUTHOR);
                     })).build())
                 .toPact();
     }
@@ -52,7 +52,7 @@ class LibraryClientPactTest {
                     .query("author=Unknown")
                 .willRespondWith()
                     .status(200)
-                    .body(newJsonArrayMaxLike(0, a -> {}).build())
+                    .body(newJsonArrayMaxLike(0, array -> {}).build())
                 .toPact();
     }
 
