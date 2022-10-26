@@ -1,8 +1,0 @@
-com.xpinjection.test.AutoConfigureFeign=\
-org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration,\
-org.springframework.cloud.openfeign.FeignAutoConfiguration,\
-org.springframework.cloud.openfeign.hateoas.FeignHalAutoConfiguration,\
-org.springframework.cloud.openfeign.loadbalancer.FeignLoadBalancerAutoConfiguration,\
-org.springframework.cloud.openfeign.encoding.FeignAcceptGzipEncodingAutoConfiguration,\
-org.springframework.cloud.openfeign.encoding.FeignContentGzipEncodingAutoConfiguration,\
-org.springframework.cloud.commons.httpclient.HttpClientConfiguration
