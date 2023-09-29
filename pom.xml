@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
+        <version>3.1.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -18,7 +18,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <spring-cloud.version>2022.0.3</spring-cloud.version>
         <pact.consumer.version>0.1.0</pact.consumer.version>
         <pact.branch.name>master</pact.branch.name>
         <pact.skip.publish>true</pact.skip.publish>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>au.com.dius.pact.consumer</groupId>
             <artifactId>junit5</artifactId>
-            <version>4.3.8</version>
+            <version>4.6.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -111,7 +111,7 @@
             <plugin>
                 <groupId>au.com.dius.pact.provider</groupId>
                 <artifactId>maven</artifactId>
-                <version>4.3.8</version>
+                <version>4.6.3</version>
                 <configuration>
                     <branchName>${pact.branch.name}</branchName>
                     <projectVersion>${pact.consumer.version}</projectVersion>
