@@ -1,5 +1,13 @@
 debug: true
 
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          library:
+            url: http://localhost:${wiremock.server.port}
+
 logging:
   level:
     org.springframework.test.context.cache: DEBUG

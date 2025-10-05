@@ -1,14 +1,18 @@
-feign:
-  library:
-    url: localhost:8080
-  client:
-    config:
-      library:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: full
+management:
+  tracing:
+    sampling:
+      probability: 1.0
 
 spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          library:
+            url: http://localhost:8080
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: full
   application:
     name: library-warehouse
   jackson:

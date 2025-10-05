@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/books?author=Invalid"
+  },
+  "response": {
+    "status": 500,
+    "jsonBody": {"error": "Ivalid author"},
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

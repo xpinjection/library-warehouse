@@ -4,10 +4,12 @@ import com.xpinjection.librarywarehouse.adaptors.httpclient.dto.BookDto;
 import com.xpinjection.test.FeignClientTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@FeignClientTest(port = 8080, stubs = "classpath*:wiremock/**/*.json")
+@ActiveProfiles("test")
+@FeignClientTest(stubs = "classpath*:wiremock/**/*.json")
 public class LibraryClientIntegrationTest {
     @Autowired
     private LibraryClient libraryClient;

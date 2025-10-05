@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "library", url = "${feign.library.url}")
+@FeignClient("library")
 public interface LibraryClient {
     @GetMapping(path = "/books", consumes = MediaType.APPLICATION_JSON_VALUE)
     List<BookDto> findByAuthor(@RequestParam String author);
