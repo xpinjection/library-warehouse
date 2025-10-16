@@ -1,6 +1,7 @@
 package com.xpinjection.librarywarehouse.adaptors.httpclient;
 
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
+import au.com.dius.pact.consumer.junit.MockServerConfig;
 import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
 import au.com.dius.pact.consumer.junit5.PactTestFor;
 import au.com.dius.pact.core.model.PactSpecVersion;
@@ -21,6 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(PactConsumerTestExt.class)
 @ActiveProfiles("pact")
 @PactTestFor(providerName = "com.xpinjection.library", pactVersion = PactSpecVersion.V3)
+@MockServerConfig(port = "8080")
 class LibraryClientPactTest {
     private static final String BOOK_NAME = "Effective Java";
     private static final String AUTHOR = "Josh Bloch";
@@ -59,7 +61,7 @@ class LibraryClientPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "foundBooks", port = "8080")
+    @PactTestFor(pactMethod = "foundBooks")
     void ifBooksFoundByAuthorThenTheyAreReturned() {
         var books = libraryClient.findByAuthor(AUTHOR);
 
@@ -67,7 +69,7 @@ class LibraryClientPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "noBooks", port = "8080")
+    @PactTestFor(pactMethod = "noBooks")
     void ifNoBooksFoundByAuthorThenReturnEmptyList() {
         var books = libraryClient.findByAuthor("Unknown");
 

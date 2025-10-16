@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ActiveProfiles("test")
 @FeignClientTest(stubs = "classpath*:wiremock/**/*.json")
-public class LibraryClientIntegrationTest {
+class LibraryClientIntegrationTest {
     @Autowired
     private LibraryClient libraryClient;
 
