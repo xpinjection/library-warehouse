@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static au.com.dius.pact.consumer.dsl.LambdaDsl.newJsonArrayMaxLike;
 import static au.com.dius.pact.consumer.dsl.LambdaDsl.newJsonArrayMinLike;
@@ -18,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @ExtendWith(PactConsumerTestExt.class)
+@ActiveProfiles("pact")
 @PactTestFor(providerName = "com.xpinjection.library", pactVersion = PactSpecVersion.V3)
 class LibraryClientPactTest {
     private static final String BOOK_NAME = "Effective Java";

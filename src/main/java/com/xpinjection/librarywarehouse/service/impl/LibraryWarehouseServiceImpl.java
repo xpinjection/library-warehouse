@@ -25,7 +25,7 @@ public class LibraryWarehouseServiceImpl implements LibraryWarehouseService {
         if (books.isEmpty()) {
             LOG.info("There are no books in the library for the author: {}", author);
             var newBooks = buyBooks(author).stream()
-                    .collect(toMap(identity(), book -> author));
+                    .collect(toMap(identity(), _ -> author));
             LOG.info("Add new books to the library: {}", newBooks);
             libraryClient.addBooks(newBooks);
         }

@@ -11,7 +11,7 @@ import org.springframework.core.env.MapPropertySource;
 
 import java.util.Map;
 
-public class StandaloneApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
+public class WireMockApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     @Override
     public void initialize(ConfigurableApplicationContext context) {
         var wireMockServer = new WireMockServer(new WireMockConfiguration()
